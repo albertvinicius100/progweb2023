@@ -8,8 +8,8 @@
     <style type="text/css">
 p {
 border: 10px solid black;
-border-bottom-left-radius: 50px;
-border-top-right-radius: 50px;
+border-bottom-left-radius: 70px;
+border-top-right-radius: 100px;
 background-color: gray;
 padding: 20px;
 margin: 40px;
