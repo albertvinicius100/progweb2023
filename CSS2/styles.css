@@ -1,0 +1,27 @@
+.conteudo {
+    background-image: url(roma.jpeg);
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+.conteudo-centralizado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    
+}
+.txt{
+    border: solid burlywood 10px;
+    border-radius: 10px;
+    background-color: light;
+    height: 30%;
+    width: 30%;
+    color: white;
+    font-size:130%;
+}
