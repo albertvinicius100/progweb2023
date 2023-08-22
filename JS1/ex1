@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+    table{
+        float: left;
+        margin: 10px;
+    }
+    td{
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <script>
+        var aux='';
+        var resultado=0;
+        
+        for(var j=1;j<=10;j++){
+            aux += ` <table border="1"><tr><th colspan="2" >Produtos de ${j}</th></tr>`;
+        for(var i=1;i<=10;i++){
+            resultado = j*i;
+            aux += `<tr><td>${j}x${i}</td><td>${resultado}</td></tr>`
+        }
+        aux += `</table>`;
+    }
+    document.write(aux);
+    </script>
+</body>
+</html>
