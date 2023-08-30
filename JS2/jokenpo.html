@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    let array = [
+        "Pedra",
+        "Papel",
+        "Tesoura"
+    ]
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+}
+    console.log("Escolha sua jogada")
+    console.log("1 - Pedra")
+    console.log("2 - Papel")
+    console.log("3 - Tesoura")
+    
+
+var end =false
+contador = 0
+while(end!=true){
+    let escolha = parseInt(prompt())
+    let escolhaMaquina = getRandomIntInclusive(1, 3)
+    console.log(`O computador jogou ${array[escolhaMaquina-1]}`)
+    if (array[escolha] === array[escolhaMaquina]){
+        console.log("A rodada empatou!")
+    }
+    else if(escolha === 1 && escolhaMaquina === 2){
+        console.log(`Você perdeu! A sua pontuação foi de ${contador}`)
+        end=true;
+    }
+    else if(escolha === 1 && escolhaMaquina === 3){
+        console.log("Você ganhou")
+        contador++
+    }
+    else if(escolha === 2 && escolhaMaquina === 1){
+        console.log("Você venceu")
+        contador++
+    }
+    else if(escolha === 3 && escolhaMaquina === 1){
+        console.log(`Você perdeu! A sua pontuação foi de ${contador}`)
+        end=true;
+    }
+    else if(escolha === 1 && escolhaMaquina === 2){
+        console.log(`Você perdeu! A sua pontuação foi de ${contador}`)
+        end=true;
+    }
+    else if(escolha === 3 && escolhaMaquina === 2){
+        console.log("Você venceu")
+        contador++
+    
+    }else if(escolha === 2 && escolhaMaquina === 3){
+        console.log(`Você perdeu! A sua pontuação foi de ${contador}`)
+        end=true;
+    }
+    else if(escolha != 1 || 2 || 3){
+        end=true;
+    }
+    
+}
+
+
+</script>    
+</body>
+</html>
