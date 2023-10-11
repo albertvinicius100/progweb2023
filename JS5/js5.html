@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS5t</title>
+    <style>
+        .ret {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+
+        }
+        .bar {
+            background-color: red;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form name="myForm">
+        <label for="">Informe a altura das barras</label>
+        <input name="h1" type="text" value="">
+        <input name="h2" type="text" value="">
+        <input name="h3" type="text" value="">
+        <input name="h4" type="text" value="">
+        <input name="h5" type="text" value="">
+        <br>
+        <label for="">Informe a largura das barras</label>
+        <input name="larg" type="text" value="">
+        <br>
+        <input type="button" id="bt" value="Desenhar o gráfico" onclick="resultado();">
+    </form>
+
+    <div id="ret" class="ret">
+    </div>
+    
+    <script>
+        function resultado(){
+            const h1 = parseInt(document.myForm.h1.value);
+            const h2 = parseInt(document.myForm.h2.value);
+            const h3 = parseInt(document.myForm.h3.value);
+            const h4 = parseInt(document.myForm.h4.value);
+            const h5 = parseInt(document.myForm.h5.value);
+            const larg = parseInt(document.myForm.larg.value);
+            const ret = document.getElementById("ret");
+
+            // Limpa o conteúdo anterior
+            ret.innerHTML = '';
+
+            const heights = [h1, h2, h3, h4, h5];
+
+            for (let i = 0; i < heights.length; i++) {
+                const bar = document.createElement("div");
+                bar.className = "bar";
+                bar.style.height = `${heights[i]}px`;
+                bar.style.width = `${larg}px`;
+                ret.appendChild(bar);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS4</title>
+</head>
+<body>
+    <form name="myForm">
+        <label for="">Informe o raio</label>
+        <input name="raio" type="text" value="">
+        <input type="button" value="Ok" onclick="resultado();">
+        <br>
+        <label for="">Área do Círculo</label>
+        <input name="area" type="text" value="">
+        <br>
+        <label for="">Circunferência</label>
+        <input name="circ" type="text" value="">
+        </form>
+        <script>
+
+            function resultado() {
+                var raio = document.myForm.raio.value;
+                //var area = document.myForm.area.value;
+                //var circ = document.myForm.circ.value;
+
+                var pi = 3.14159;
+                resultadoArea = pi * (raio ** 2);
+                resultadoCirc = 2 * pi * raio;
+
+
+                document.myForm.area.value = resultadoArea.toFixed(2);
+                document.myForm.circ.value = resultadoCirc.toFixed(2);
+            }
+
+
+
+
+
+        </script>
+</body>
+
+</html>
