@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS3</title>
+</head>
+<body>
+    
+</body>
+<script>class IntegerSet {
+    constructor(maxValue) {
+      this.maxValue = maxValue;
+      this.set = new Array(maxValue + 1).fill(false);
+    }
+  
+    insert(element) {
+      if (element >= 0 && element <= this.maxValue) {
+        this.set[element] = true;
+      }
+    }
+  
+    remove(element) {
+      if (element >= 0 && element <= this.maxValue) {
+        this.set[element] = false;
+      }
+    }
+  
+    union(otherSet) {
+      if (otherSet instanceof IntegerSet && this.maxValue === otherSet.maxValue) {
+        const result = new IntegerSet(this.maxValue);
+        for (let i = 0; i <= this.maxValue; i++) {
+          result.set[i] = this.set[i] || otherSet.set[i];
+        }
+        return result;
+      } else {
+        throw new Error('Incompatible sets for union operation.');
+      }
+    }
+  
+    intersection(otherSet) {
+      if (otherSet instanceof IntegerSet && this.maxValue === otherSet.maxValue) {
+        const result = new IntegerSet(this.maxValue);
+        for (let i = 0; i <= this.maxValue; i++) {
+          result.set[i] = this.set[i] && otherSet.set[i];
+        }
+        return result;
+      } else {
+        throw new Error('Incompatible sets for intersection operation.');
+      }
+    }
+  
+    difference(otherSet) {
+      if (otherSet instanceof IntegerSet && this.maxValue === otherSet.maxValue) {
+        const result = new IntegerSet(this.maxValue);
+        for (let i = 0; i <= this.maxValue; i++) {
+          result.set[i] = this.set[i] && !otherSet.set[i];
+        }
+        return result;
+      } else {
+        throw new Error('Incompatible sets for difference operation.');
+      }
+    }
+  
+    toString() {
+      const elements = [];
+      for (let i = 0; i <= this.maxValue; i++) {
+        if (this.set[i]) {
+          elements.push(i);
+        }
+      }
+      return `{${elements.join(', ')}}`;
+    }
+  }
+  
+  const set1 = new IntegerSet(10);
+  set1.insert(3);
+  set1.insert(5);
+  set1.insert(7);
+  
+  const set2 = new IntegerSet(10);
+  set2.insert(5);
+  set2.insert(8);
+  
+  console.log('Conjunto 1:', set1.toString());
+  console.log('Conjunto 2:', set2.toString());
+  
+  const unionSet = set1.union(set2);
+  console.log('União:', unionSet.toString());
+  
+  const intersectionSet = set1.intersection(set2);
+  console.log('Interseção:', intersectionSet.toString());
+  
+  const differenceSet = set1.difference(set2);
+  console.log('Diferença:', differenceSet.toString());
+  </script>
+</html>
