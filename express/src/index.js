@@ -4,6 +4,9 @@ const router = require("./router/router")
 const sass = require('node-sass-middleware');
 const handlebars = require("express-handlebars");
 const cookieParser = require("cookie-parser")
+const uuid = require("uuid")
+const session = require("express-session")
+
 
 require("dotenv").config()
 
@@ -13,6 +16,22 @@ const PORT = 4455;
 app.use(express.urlencoded({extended: false}));
 app.use(logger("complete"))
 app.use(cookieParser())
+
+app.use(session({
+    genid: ()=> uuid.v4(),
+    secret: "Sm$dJS45Mda@g",
+    resave: true,
+    cookie:{
+        maxAge: 2 * 60 * 60 * 1000,
+    },
+    saveUninitialized: true
+}))
+
+app.use((req,res,next)=>{
+    app.locals.logado = !!req.session.uid;
+    next()
+})
+
 app.engine("handlebars", handlebars.engine({
     helpers: require(`${__dirname}/views/helpers/helpers.js`)
 }));

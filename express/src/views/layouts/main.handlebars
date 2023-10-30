@@ -16,11 +16,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav">
-            
-            
-            
-          </ul>
-          <ul class="navbar-nav ms-md-auto">
              <li class="nav-item">
               <a target="_blank" rel="noopener" class="nav-link" href="/game"><i class=""></i> Jogar</a>
             </li>
@@ -33,13 +28,30 @@
             <li class="nav-item">
               <a target="_blank" rel="noopener" class="nav-link" href="/ui"><i class=""></i> Interface</a>
             </li>
-            <li class="nav-item">
-              <a target="_blank" rel="noopener" class="nav-link" href="https://github.com/thomaspark/bootswatch/"><i class="bi bi-github"></i> GitHub</a>
-            </li>
-            <li class="nav-item">
-              <a target="_blank" rel="noopener" class="nav-link" href="https://twitter.com/bootswatch"><i class="bi bi-twitter"></i> Twitter</a>
-            </li>
           </ul>
+          <ul class="navbar-nav ms-md-auto">
+              <li class="nav-item">
+                <a target="_blank" rel="noopener" class="nav-link" href="https://github.com/thomaspark/bootswatch/"><i class="bi bi-github"></i> GitHub</a>
+              </li>
+              <li class="nav-item">
+                <a target="_blank" rel="noopener" class="nav-link" href="https://twitter.com/bootswatch"><i class="bi bi-twitter"></i> Twitter</a>
+              </li>
+              <li class="nav-item">
+              {{#if logado}}
+                <a 
+                class="nav-link "
+                href="/logout">
+                  <span>Logout</span>
+                </a>
+              {{else}}
+                <a 
+                class="nav-link "
+                href="/login">
+                <span>Login</span>
+                </a>
+              {{/if}}
+              </li>
+            </ul>
         </div>
       </div>
     </div>
