@@ -1,0 +1,97 @@
+.deserto {
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.chao {
+  background-image: url(../img/sprite.png);
+  position: absolute;
+  bottom: 0px;
+  background-position-y: -78px;
+  width: 1831px;
+  height: 20px;
+  z-index: 2;
+}
+
+.dino {
+  background-image: url(../img/sprite.png);
+  position: absolute;
+  width: 66px;
+  left: 20px;
+  height: 70px;
+  z-index: 3;
+}
+
+.nuvem {
+  background-image: url(../img/sprite.png);
+  background-position: -125px -2px;
+  position: absolute;
+  width: 70px;
+  height: 20px;
+  z-index: 2;
+}
+
+
+.cacto{
+  background-image: url(../img/sprite.png);
+  background-position: -338px -5px;
+  position: absolute;
+  z-index: 3;
+}
+
+.pterossauro{
+  background-image: url(../img/sprite.png);
+  position: absolute;
+  z-index: 3;
+}
+
+
+
+.noite{
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cacto-1{
+  height: 40px; 
+  width: 20px;
+  bottom: 0;
+}
+
+.cacto-2{
+  height: 60px;
+  width: 20px;
+  bottom: 0;
+}
+.game-over-message {
+  width: 290px; 
+  height: 40px; 
+  background-image: url(../img/sprite.png); 
+  background-position: -967px -20px; 
+  text-indent: -9999px; 
+  display: block; 
+  margin: 0 auto; 
+  position: absolute;
+  top: 150px;
+  left: 512px;
+  transform: translate(-50%, -50%);
+}
+.restart-button {
+  width: 50px; 
+  height: 50px; 
+  background-image: url(../img/sprite.png); 
+  background-position: 0px -5px;
+  text-indent: -9999px;
+  position: absolute;
+  display: block; 
+  margin: 0 auto; 
+  top: 200px;
+  left: 512px;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}

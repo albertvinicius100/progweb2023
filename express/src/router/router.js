@@ -18,7 +18,7 @@ router.post("/signup", mainController.signup)
 router.get("/login", mainController.login)
 router.post("/login", mainController.login)
 router.get("/logout", mainController.logout)
-
+router.get("/game", mainController.game)
 //Area Controller
 
 router.get("/area", areaController.index);

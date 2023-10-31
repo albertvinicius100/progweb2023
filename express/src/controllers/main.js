@@ -25,6 +25,12 @@ const sobre = (req, res) => {
 };
 
 
+
+const game = (req, res) => {
+    res.render('main/game');
+};
+
+
 const auth = (req, res) =>{
     if(!('usuario' in req.cookies)){
         res.cookie('usuario', 3452)
@@ -87,4 +93,4 @@ const logout = (req,res) => {
     })
 }
 
-module.exports = {index, sobre, signup, login, logout, auth}
+module.exports = {index, sobre, signup, login, logout, auth, game}
